@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Brand color tokens */
+:root {
+  --ink: #111111;
+  --muted: #6b7280;
+  --surface: #f7f5f2;      /* warm light background */
+  --accent: #8b7d5b;      /* muted gold / mocha */
+  --accent-dark: #6f6348;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.reveal-active {
+  animation: fadeSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal-left-active {
+  animation: slideFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Cursor pointer styles for all links and interactive elements */
+a, button, [role="button"], input[type="submit"], input[type="button"], 
+.cursor-pointer, .hover\\:cursor-pointer:hover {
+  cursor: pointer !important;
+}
+
+/* Specific cursor styles for icons */
+svg, i, .icon {
+  cursor: pointer !important;
+}
+
+/* Ensure all clickable elements have pointer cursor */
+.clickable, [onClick], [onclick] {
+  cursor: pointer !important;
+}
